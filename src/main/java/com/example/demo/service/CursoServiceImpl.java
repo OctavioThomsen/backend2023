@@ -39,5 +39,14 @@ public class CursoServiceImpl implements CursoService {
 	public Curso saveCurso(Curso newCurso) {
 		return cursoRepository.save(newCurso);
 	}
+	
+	@Override
+	public String deleteCurso(Long id) {
+		if (cursoRepository.findById(id) != null) {
+			cursoRepository.deleteById(id);
+			return "OK";
+		}
+		return "ERROR: el id no existe";
+	}
 
 }

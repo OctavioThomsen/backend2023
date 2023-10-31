@@ -37,5 +37,10 @@ public class CursoController {
 	public Curso addCurso(@RequestBody Curso curso) {
 		return cursoService.saveCurso(curso);
 	}
+	
+	@RequestMapping(value = "/cursos/{id}", method = RequestMethod.DELETE, produces = "application/json")
+	public String deletePost(@PathVariable Long id) {
+		return cursoService.deleteCurso(id);
+	}
 
 }

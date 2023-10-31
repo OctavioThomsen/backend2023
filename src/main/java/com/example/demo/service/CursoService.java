@@ -13,4 +13,6 @@ public interface CursoService {
 	public Curso saveCurso(Curso newCurso);
 
 	public String updateCurso(Curso curso);
+	
+	public String deleteCurso(Long id);
 }
